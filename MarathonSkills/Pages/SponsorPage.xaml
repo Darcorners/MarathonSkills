@@ -1,0 +1,68 @@
+﻿<Page x:Class="MarathonSkills.Pages.SponsorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="427" d:DesignWidth="700"
+      Title="SponsorPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="104*"/>
+            <RowDefinition Height="323*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="182" Margin="147,99,0,0" Grid.Row="1"/>
+        <TextBox x:Name="Card"  HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="182" Margin="147,155,0,0" Grid.Row="1"/>
+        <TextBox x:Name="CVC" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="72" Margin="147,246,0,0" Grid.Row="1" RenderTransformOrigin="0.583,1.348"/>
+        <Label HorizontalContentAlignment="Right" Content="Бегун:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,126,0,0" Grid.Row="1" Width="132"/>
+        <Grid Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="104*"/>
+                <RowDefinition Height="323*"/>
+            </Grid.RowDefinitions>
+            <Label Background="{DynamicResource dark_grey}" VerticalContentAlignment="Center" Content="MARATHON SKILLS 2022" FontWeight="Bold" Foreground="White" Padding="100,0 ,0 ,0" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="700"/>
+            <Button x:Name="Button_back" Content="Назад" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Width="82" Click="ButtonBack_Click" Height="26"/>
+            <RichTextBox Background="Transparent" Height="100" VerticalAlignment="Top" Margin="22,56,22,0" Grid.RowSpan="2">
+                <FlowDocument>
+                    <Paragraph TextAlignment="Center">
+                        <Run Text="Спонсор бегуна"/>
+                    </Paragraph>
+                    <Paragraph TextAlignment="Center">
+                        <Run Text="Пожалуйста выберите бегуна, которого вы отели бы спонсировать и сумму, которую вы хотели бы спонсировать. Спасибо за вашу поддержку бегунов и их благотворительных учреждений."/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label Content="Информация о спонсоре" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,57,0,0" Grid.Row="1"/>
+            <Label Content="Благотворительность" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="451,57,0,0" Grid.Row="1"/>
+            <Label Content="Сумма пожертвования" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="451,107,0,0" Grid.Row="1"/>
+            <Button x:Name="Button_pay" Content="Заплатить" HorizontalAlignment="Left" Margin="451,240,0,0" VerticalAlignment="Top" Width="109" Height="47" Grid.Row="1" Click="Button_pay_Click"/>
+            <Button x:Name="Button_cancel" Content="Отмена" HorizontalAlignment="Left" Margin="565,240,0,0" VerticalAlignment="Top" Width="113" Height="47" Grid.Row="1" Click="ButtonBack_Click"/>
+            <TextBox x:Name="textBox_cardYear" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="64" Margin="204,214,0,0" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.588"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.323"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="textBox_cardMon" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="52" Margin="147,214,0,0" Grid.Row="1" RenderTransformOrigin="0.548,1.217"/>
+            <TextBox x:Name="Money" HorizontalContentAlignment="Center" Text="{Binding donation, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="120" Margin="483,180,0,0" Grid.Row="1" RenderTransformOrigin="-0.283,0.609"/>
+            <Label HorizontalContentAlignment="Right" Content="Ваше имя:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,99,0,0" Grid.Row="1" Width="137" RenderTransformOrigin="0.413,2.167"/>
+            <Label HorizontalContentAlignment="Right" Content="Карта:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,159,0,0" Grid.Row="1" RenderTransformOrigin="0.706,2.5" Width="124"/>
+            <Label HorizontalContentAlignment="Right" Content="Срок действия:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,219,0,0" Grid.Row="1" RenderTransformOrigin="0.706,2.5"/>
+            <Label HorizontalContentAlignment="Right" Content="CVC:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,251,0,0" Grid.Row="1" RenderTransformOrigin="0.706,2.5"/>
+            <Label HorizontalContentAlignment="Right" Content="Номер карты:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0" Grid.Row="1" RenderTransformOrigin="0.706,2.5" Width="124"/>
+            <ComboBox x:Name="comboBox_Runner" SelectionChanged="comboBox_Runner_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" Margin="147,128,0,0" Grid.Row="1"/>
+            <Label x:Name="Label_charity" HorizontalContentAlignment="Center" Content="Фонд" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="520,84,0,0" Grid.Row="1"/>
+            <Label x:Name="Label_Donartion" HorizontalContentAlignment="Center" Content="{Binding donation, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="476,128,0,0" Grid.Row="1" Height="47" Width="134"/>
+            <Button x:Name="Donw" Content="-" HorizontalAlignment="Left" Height="23" Margin="451,180,0,0" Grid.Row="1" VerticalAlignment="Top" Width="27" Click="Down_Click" />
+            <Button x:Name="Up" Content="+" HorizontalAlignment="Left" Height="23" Margin="608,180,0,0" Grid.Row="1" VerticalAlignment="Top" Width="27" Click="Up_Click" />
+            <Image HorizontalAlignment="Left" MouseDown="Image_MouseDown" Height="29" Margin="636,84,0,0" Grid.Row="1" VerticalAlignment="Top" Width="20" ScrollViewer.CanContentScroll="True" Source="/MarathonSkills;component/Resources/Information_button.png"/>
+        </Grid>
+        <TextBox x:Name="Card_Number" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap"  VerticalAlignment="Top" Width="182" Margin="147,183,0,0" Grid.Row="1"/>
+    </Grid>
+</Page>

@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MarathonSkills.Pages
+namespace MarathonSkills
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для CharitiesPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class CharitiesPage : Page
     {
-        public MainPage()
+        public CharitiesPage()
         {
             InitializeComponent();
-        }
-
-        private void button_becomeSponsor_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("Pages/SponsorPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

@@ -1,0 +1,26 @@
+﻿<Page x:Class="MarathonSkills.Pages.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AboutPage">
+
+    <Grid>
+        <Label x:Name="label" Background="{DynamicResource dark_grey}" Content="MARATHON SKILLS 2022" FontWeight="Bold" Foreground="White" HorizontalContentAlignment="Left" Padding="100,0,0,0" Height="42" VerticalAlignment="Top" Width="800" />
+        <Button x:Name="button_back" Click="button_back_Click" Content="Назад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="65"/>
+        <Label Content="Подробная информация" FontWeight="Bold" FontSize="20" Margin="0,50,0,0" Height="25" VerticalAlignment="Top"/>
+        <Button x:Name="button_about" Content="Marathon skills 2022" HorizontalAlignment="Left" Margin="190,118,0,0" VerticalAlignment="Top" Height="60" Width="150"/>
+        <Button x:Name="button_howlong" Margin="0,118,190,0" VerticalAlignment="Top" Height="60" HorizontalAlignment="Right" Width="150">
+            <TextBlock TextAlignment="Center"><Run Text="Насколько долгий"/><LineBreak/><Run Text="марафон"/></TextBlock>
+        </Button>
+        <Button x:Name="button_results" HorizontalAlignment="Left" Margin="190,199,0,0" VerticalAlignment="Top" Height="60" Width="150">
+            <TextBlock TextAlignment="Center"><Run Text="Предыдущие"/><LineBreak/><Run Text="результаты"/></TextBlock>
+        </Button>
+        <Button x:Name="button_list" Click="button_list_Click" Margin="0,199,190,0" VerticalAlignment="Top" Height="60" HorizontalAlignment="Right" Width="150">
+            <TextBlock TextAlignment="Center"><Run Text="Список"/><LineBreak/><Run Text="благотворительных"/><LineBreak/><Run Text="организаций"/></TextBlock>
+        </Button>
+    </Grid>
+</Page>

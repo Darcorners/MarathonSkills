@@ -26,7 +26,12 @@ namespace MarathonSkills
         {
             InitializeComponent();
 
-            this.DataContext = this;
+            DataContext = this;
+        }
+
+        ~MainWindow()
+        {
+            Util.db.Database.Connection.Close();
         }
 
         public string Time

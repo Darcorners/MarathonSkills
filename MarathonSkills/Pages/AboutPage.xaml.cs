@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace MarathonSkills.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для AboutPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class AboutPage : Page
     {
-        public MainPage()
+        public AboutPage()
         {
             InitializeComponent();
         }
 
-        private void button_becomeSponsor_Click(object sender, RoutedEventArgs e)
+        private void button_back_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Pages/SponsorPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("Pages/MainPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
